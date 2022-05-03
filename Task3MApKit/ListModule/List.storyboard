@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="Y6W-OH-hqX" customClass="ListViewController" customModule="Task3MapKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-D2-F5n">
+                                <rect key="frame" x="16" y="52" width="382" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="41s-gu-nQt"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="List"/>
+                                    <segment title="Map"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSegment:" destination="Y6W-OH-hqX" eventType="valueChanged" id="L82-dR-ljL"/>
+                                </connections>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vBL-Lh-gFX">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-zi-Geh">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lbo-g2-M7K">
+                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="8W6-hf-Cdy"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="nU1-C8-2E9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dd9-zi-Geh" firstAttribute="top" secondItem="lgF-D2-F5n" secondAttribute="bottom" constant="12" id="4vl-XG-fDA"/>
+                            <constraint firstItem="dd9-zi-Geh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4w4-VI-Mte"/>
+                            <constraint firstItem="vBL-Lh-gFX" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="EFX-MN-yWx"/>
+                            <constraint firstItem="lgF-D2-F5n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="FeA-7X-uHc"/>
+                            <constraint firstItem="vBL-Lh-gFX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NrU-Vn-NtT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lgF-D2-F5n" secondAttribute="trailing" constant="16" id="PH8-gt-R0k"/>
+                            <constraint firstItem="vBL-Lh-gFX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TMS-D6-gCA"/>
+                            <constraint firstItem="dd9-zi-Geh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="UcI-sM-O8q"/>
+                            <constraint firstItem="lgF-D2-F5n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="XJc-PP-qk6"/>
+                            <constraint firstItem="vBL-Lh-gFX" firstAttribute="top" secondItem="lgF-D2-F5n" secondAttribute="bottom" constant="12" id="jRY-Dg-DNM"/>
+                            <constraint firstItem="dd9-zi-Geh" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="oom-WH-o9Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="js6-SS-VcI"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dd9-zi-Geh" id="mHr-aA-eh9"/>
+                        <outlet property="mapView" destination="vBL-Lh-gFX" id="8kx-4n-UJN"/>
+                        <outlet property="segmentedController" destination="lgF-D2-F5n" id="ohf-1b-8H5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431.8840579710145" y="-48.214285714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
