@@ -1,6 +1,6 @@
 # Locations on Map
 
-I developed Locatios App in order to learn Map Kit and Core Location. I used [LocationIQ](https://locationiq.com/docs) APIs all of my Latitude and Longitude needs. I gave latitude and longitude of Toronto for current location as Default. 
+I developed **Locatios App** in order to learn Map Kit and Core Location. I used [LocationIQ](https://locationiq.com/docs) APIs all of my Latitude and Longitude needs. I gave latitude and longitude of Toronto for current location as Default. 
 
 ## Technologies and Structures
 
