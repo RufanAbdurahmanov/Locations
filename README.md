@@ -14,7 +14,7 @@ I developed **Locatios App** in order to learn Map Kit and Core Location. I used
  - [x] - MVVM Pattern
  - [x] - Web services
  - [x] - Map Kit
- - [x] - Lore Location
+ - [x] - Core Location
  - [x] - Search View Controller
 
  
